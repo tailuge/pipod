@@ -5,13 +5,14 @@
 This project contains a gitpod Docker file that installs the haskell platform
 
 ```
-sudo apt-get install -y \
-    haskell-platform
+RUN curl -sSL https://get.haskellstack.org/ | sh
 ```
 
 Use Haskell on the command line
 
 ```
-haskell-compiler factorial.hs
-./factorial
+stack new helloworld new-template
+cd helloworld/
+stack build
+stack exec helloworld-exe
 ```
