@@ -8,7 +8,8 @@ RUN sudo apt-get update \
 
 # initialise
 USER gitpod
-RUN curl -sSL https://get.haskellstack.org/ | sh
+RUN curl -sSL https://get.haskellstack.org/ | sh \
+ && stack setup
 USER root
 
 #RUN curl -sSL https://get.haskellstack.org/ | sh
