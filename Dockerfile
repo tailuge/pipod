@@ -11,5 +11,3 @@ USER gitpod
 RUN curl -sSL https://get.haskellstack.org/ | sh \
  && stack setup
 USER root
-
-#RUN curl -sSL https://get.haskellstack.org/ | sh
