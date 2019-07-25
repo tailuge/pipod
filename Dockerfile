@@ -7,6 +7,8 @@ RUN sudo apt-get update \
  && sudo rm -rf /var/lib/apt/lists/*
 
 # initialise
+USER gitpod
 RUN stack setup
 
+USER root
 #RUN curl -sSL https://get.haskellstack.org/ | sh
