@@ -26,4 +26,6 @@ splits lst = zip (prefixes lst) (suffixes lst)
 
 inserteverywhere x lst = map (\(pre,suf) -> pre ++ x:suf) (splits lst)
 
---inserteverywhere 8 [1,2,3,4]
+perm [] = []
+perm (x:[]) = [[x]]
+perm (x:xs) = concatMap (inserteverywhere x) (perm xs)
