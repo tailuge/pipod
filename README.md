@@ -4,15 +4,13 @@
 
 This project contains a gitpod Docker file that installs the haskell platform
 
-```
-RUN curl -sSL https://get.haskellstack.org/ | sh
-```
-
 Use Haskell on the command line
 
 ```
-stack new helloworld new-template
-cd helloworld/
-stack build
-stack exec helloworld-exe
+stack repl
+:load main.hs
 ```
+
+ref:
+
+https://www.haskell.org/onlinereport/standard-prelude.html
