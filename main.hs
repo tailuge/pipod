@@ -83,3 +83,7 @@ countdown target lst = filter (\(_,v) -> v==target) $ map (\x -> (x,eval x)) (bu
 -- https://www.youtube.com/watch?v=pfa3MHLLSWI
 -- countdown (Just 952) [Val 3, Val 6, Val 25, Val 50, Val 75, Val 100]
 
+i x = x
+k x _ = x
+s x y z = x z (y z)
+sks = s (k s)

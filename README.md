@@ -14,3 +14,5 @@ stack repl
 ref:
 
 https://www.haskell.org/onlinereport/standard-prelude.html
+
+https://en.wikipedia.org/wiki/SKI_combinator_calculus
