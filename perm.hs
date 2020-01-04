@@ -20,3 +20,14 @@ perm (x:[]) = [[x]]
 perm (x:xs) = concatMap (inserteverywhere x) (perm xs)
 
 
+cons x (y,lst) = (x+y, x:lst)
+
+steps lst = (take 2 lst) : (steps3 lst) ++ [(drop ((length lst) - 2) lst)]
+ where
+    steps3 (a:b:c:[]) = [[a,b,c]]
+    steps3 (x:xs) = (take 3 (x:xs)) : steps3 xs
+
+paths [a] = map (\x -> [(x,[x])]) a
+paths (x:xs) = zipWith f x (steps (paths xs))
+  where f cost p = concat (map extend p)
+         where extend p = map (cons cost) p
