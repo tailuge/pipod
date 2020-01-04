@@ -19,7 +19,7 @@ perm [] = []
 perm (x:[]) = [[x]]
 perm (x:xs) = concatMap (inserteverywhere x) (perm xs)
 
-
+path x = (x,[x])
 cons x (y,lst) = (x+y, x:lst)
 
 steps lst = (take 2 lst) : (steps3 lst) ++ [(drop ((length lst) - 2) lst)]
@@ -31,3 +31,10 @@ paths [a] = map (\x -> [(x,[x])]) a
 paths (x:xs) = zipWith f x (steps (paths xs))
   where f cost p = concat (map extend p)
          where extend p = map (cons cost) p
+
+minpaths = map minimum . paths
+minpath = minimum . minpaths
+
+minpaths' [row] = (minimum . map path) row
+
+
