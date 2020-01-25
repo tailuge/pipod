@@ -1,11 +1,12 @@
-FROM gitpod/workspace-full
+FROM gitpod/workspace-full:latest
 
-# add your tools here
-RUN sudo apt-get update \
- && sudo apt-get install -y \
-    apt-get install gcc-arm-none-eabi \    
- && sudo rm -rf /var/lib/apt/lists/*
+USER root
+# Install custom tools, runtime, etc.
+RUN apt-get update && apt-get install -y \
+        gcc-arm-none-eabi \
+    && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
-# initialise
 USER gitpod
+# Apply user-specific settings
+# Give back control
 USER root
