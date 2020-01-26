@@ -4,19 +4,18 @@
 
 This project contains a gitpod Docker file that installs arm cross assembler and emulator
 
+The following work using qemu v4.0 from `sudo add-apt-repository ppa:jacob/virtualisation` (See Dockerfile)
+
 ```
 cd digisys/lab1-asm/
-make q-add.elf
-qemu-arm q-add.elf 5 7
-apt-cache show qemu-system-arm
-lsb_release -a
+make add.elf
+qemu-system-arm -M microbit -device loader,file=add.elf -serial stdio -monitor telnet::45454,server,nowait -nographic
 
 ```
 ref:
 
 http://spivey.oriel.ox.ac.uk/corner/Lab_one_(Digital_Systems)
 
-The following works using qemu v4.0 from sudo add-apt-repository ppa:jacob/virtualisation
 
 ```
 git clone git://github.com/RIOT-OS/RIOT.git
@@ -29,3 +28,10 @@ BOARD=microbit make emulate
 ref:
 
 https://riot-os.org/api/group__boards__microbit.html
+
+useful
+
+```
+apt-cache show qemu-system-arm
+lsb_release -a
+```
