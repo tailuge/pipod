@@ -16,11 +16,14 @@ ref:
 
 http://spivey.oriel.ox.ac.uk/corner/Lab_one_(Digital_Systems)
 
+The following works using qemu v4.0 from sudo add-apt-repository ppa:jacob/virtualisation
 
 ```
 git clone git://github.com/RIOT-OS/RIOT.git
 cd RIOT/examples/hello-world
+BOARD=microbit make clean all -j4
 BOARD=microbit make emulate
+
 ```
 
 ref:
