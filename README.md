@@ -5,9 +5,11 @@
 This project contains a gitpod Docker file that installs arm cross assembler and emulator
 
 ```
-qemu-arm
+cd digisys/lab1-asm/
+make q-add.elf
+qemu-arm q-add.elf 5 7
 ```
 
 ref:
 
-http://spivey.oriel.ox.ac.uk/corner/Installing_the_micro:bit_toolchain_(Digital_Systems)
+http://spivey.oriel.ox.ac.uk/corner/Lab_one_(Digital_Systems)

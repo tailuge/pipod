@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Don't exit on interrupt
+trap '' 2
+
+GDB=`which arm-none-eabi-gdb` || GDB=`which gdb-multiarch` \
+    || { echo "debug: Can't find gdb" >/dev/stderr; exit 1; }
+
+# Start up the debug server
+pyocd gdbserver &
+
+# Wait for the server to initialise
+sleep 2
+
+# Start up gdb
+$GDB $* -ex 'target remote :3333'
+
+# When gdb stops, wait for final messages from the server
+sleep 1
+

@@ -1,0 +1,21 @@
+University of Oxford
+Honour School of Computer Science
+DIGITAL SYSTEMS
+lab1-asm
+
+A program with an subroutine written in assembly language.  The main
+program (written in C) prompts for two unsigned integers x, y on the
+serial console, then calls a subroutine foo(x, y) and prints the
+result.  The supplied code has definitions foo(x, y) = x + y and
+foo(x, y) = x * y (using a loop), but you are invited to redefine it
+in various ways.
+
+TASKS: Compile and run the program as it stands.  Write alternative
+assembly language code for one or more of the following functions.
+
+1. Subtraction
+2. Multiplication using the muls instruction
+3. Experiment with other binary operations
+4. Multiplication with a faster looping algorithm
+5. Division by repeated subtraction
+6. Division with a faster algorithm
